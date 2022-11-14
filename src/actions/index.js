@@ -1,64 +1,73 @@
-import { EDUCATION, MODIFY_COUNT, MODIFY_PROJECTS_COUNT, MODIFY_SKILLS_COUNT, MODIFY_SOCIAL_COUNT, PROFILE, PROJECTS, SKILLS, SOCIALS } from "../Constants/constant";
-
-export const SaveEducationData = (data) => dispatch =>{
-
+import {
+    EDUCATION,
+    MODIFY_COUNT,
+    MODIFY_PROJECTS_COUNT,
+    MODIFY_JOBS_COUNT,
+    MODIFY_CUSTOM_COUNT,
+    PROFILE,
+    PROJECTS,
+    JOBS,
+    CUSTOM,
+  } from "../Constants/constant";
+  
+  export const SaveEducationData = (data) => (dispatch) => {
     dispatch({
-     type: EDUCATION,
-     payload : data
-    })
-}
-
-export const ModifyEducationCount = (count) => dispatch =>{
+      type: EDUCATION,
+      payload: data,
+    });
+  };
+  
+  export const ModifyEducationCount = (count) => (dispatch) => {
     dispatch({
-     type: MODIFY_COUNT,
-     payload: count
-    })
-   }
-
-   export const ModifySkillsCount = (count) => dispatch =>{
+      type: MODIFY_COUNT,
+      payload: count,
+    });
+  };
+  
+  export const ModifyJobsCount = (count) => (dispatch) => {
     dispatch({
-     type: MODIFY_SKILLS_COUNT,
-     payload: count
-    })
-   }
-   export const ModifySocialsCount = (count) => dispatch =>{
+      type: MODIFY_JOBS_COUNT,
+      payload: count,
+    });
+  };
+  export const ModifyCustomCount = (count) => (dispatch) => {
     dispatch({
-     type: MODIFY_SOCIAL_COUNT,
-     payload: count
-    })
-   }
-   export const ModifyProjectsCount = (count) => dispatch =>{
+      type: MODIFY_CUSTOM_COUNT,
+      payload: count,
+    });
+  };
+  export const ModifyProjectsCount = (count) => (dispatch) => {
     dispatch({
-     type: MODIFY_PROJECTS_COUNT,
-     payload: count
-    })
-   }
-   export const SaveProfileData = (data) => dispatch =>{
-
+      type: MODIFY_PROJECTS_COUNT,
+      payload: count,
+    });
+  };
+  export const SaveProfileData = (data) => (dispatch) => {
     dispatch({
-     type: PROFILE,
-     payload : data
-    })
-}
-
-export const SaveSocialData = (data) => dispatch =>{
-
+      type: PROFILE,
+      payload: data,
+    });
+  };
+  
+  export const SaveCustomData = (data) => (dispatch) => {
     dispatch({
-     type: SOCIALS,
-     payload : data
-    })
-}
-
-export const SaveSkillsData = (data) => dispatch =>{
+      type: CUSTOM,
+      payload: data,
+    });
+  };
+  
+  export const SaveJobsData = (data) => (dispatch) => {
     dispatch({
-     type: SKILLS,
-     payload : data
-    })
-}
-
-export const SaveProjectData = (data) => dispatch =>{
+      type: JOBS,
+      payload: data,
+    });
+  };
+  
+  export const SaveProjectData = (data) => (dispatch) => {
     dispatch({
-     type: PROJECTS,
-     payload : data
-    })
-}
+      type: PROJECTS,
+      payload: data,
+    });
+  };
+  
+  

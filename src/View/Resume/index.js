@@ -1,33 +1,22 @@
-import React, { useEffect  , useRef} from 'react'
+import React from "react";
 import { connect } from "react-redux";
-import { makeStyles  } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
+import ResumeModel from "./resume";
 
-import ResumeModel from "./resume"
-import { 
-Button
-} from '@material-ui/core';
-
-
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1
-    },
-  
-  }));
+const useStyles = makeStyles(() => ({
+  root: {
+    flexGrow: 1,
+  },
+}));
 
 const MainPage = (props) => {
-
-
-
-    const classes = useStyles();
-    return (
-        <div>
-
-            <ResumeModel />
-        </div>
-    )
-}
+  const classes = useStyles();
+  return (
+    <div>
+      <ResumeModel />
+    </div>
+  );
+};
 
 const mapStateToProps = (state) => ({});
 

@@ -2,3 +2,15 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.MuiButton-containedPrimary {
+  background-color: #710b7e !important;
+}
+
+.MuiStepIcon-root.MuiStepIcon-active, .MuiStepIcon-root.MuiStepIcon-completed {
+  color: #710b7e !important;
+}
+
+.MuiAppBar-colorPrimary {
+  background-color: #710b7e !important;
+}

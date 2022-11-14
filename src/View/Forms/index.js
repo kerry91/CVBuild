@@ -7,63 +7,55 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import ProfileForm from "./profileForm";
 import EducationForm from "./education";
-import Skills from "./skills";
-import Social from "./social";
-import Project from "./projects"
-import Resume from "../Resume/index"
+import Jobs from "./Jobs";
+import Custom from "./Custom";
+import Project from "./projects";
+import Resume from "../Resume/index";
 
 import { connect } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%"
+    width: "100%",
   },
   button: {
-    marginRight: theme.spacing(1)
+    marginRight: theme.spacing(1),
   },
   completed: {
-    display: "inline-block"
+    display: "inline-block",
   },
   instructions: {
     marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1)
-  }
+    marginBottom: theme.spacing(1),
+  },
 }));
 
 function getSteps() {
-  return [
-    "Details",
-    "Study",
-    "Jobs",
-    "Projects",
-    "Custom"
-  ];
+  return ["Details", "Projects", "Jobs", "Study", "Custom"];
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
       return <ProfileForm />;
-    case 1:
-      return <EducationForm  />;
-    case 2:
-      return <Skills />;
     case 3:
+      return <EducationForm />;
+    case 2:
+      return <Jobs />;
+    case 1:
       return <Project />;
     case 4:
-      return <Social />;
+      return <Custom />;
     default:
       return "Unknown step";
   }
 }
 
- const  ResumeForm = (props) =>  {
+const ResumeForm = (props) => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState({});
   const steps = getSteps();
-
-
 
   const totalSteps = () => {
     return steps.length;
@@ -84,9 +76,8 @@ function getStepContent(step) {
   const handleNext = () => {
     const newActiveStep =
       isLastStep() && !allStepsCompleted()
-        ? // It's the last step, but not all steps have been completed,
-          // find the first step that has been completed
-          steps.findIndex((step, i) => !(i in completed))
+        ? 
+          steps.findIndex((i) => !(i in completed))
         : activeStep + 1;
     setActiveStep(newActiveStep);
   };
@@ -99,19 +90,15 @@ function getStepContent(step) {
     setActiveStep(step);
   };
 
-
   const handleComplete = () => {
     let flag = true;
-    console.log(activeStep)
-    const action = getSteps()[activeStep]
-   
-    if(flag){
+
+    if (flag) {
       const newCompleted = completed;
       newCompleted[activeStep] = true;
       setCompleted(newCompleted);
       handleNext();
     }
-    
   };
 
   const handleReset = () => {
@@ -120,8 +107,8 @@ function getStepContent(step) {
 
   const handleEdit = () => {
     setCompleted({});
-    setActiveStep(0)
-  }
+    setActiveStep(0);
+  };
 
   return (
     <div className={classes.root}>
@@ -129,7 +116,7 @@ function getStepContent(step) {
         {steps.map((label, index) => (
           <Step key={label}>
             <StepButton
-              color="secondary"
+              color="primary"
               onClick={handleStep(index)}
               completed={completed[index]}
             >
@@ -141,9 +128,6 @@ function getStepContent(step) {
       <div>
         {allStepsCompleted() ? (
           <div>
-            <Typography className={classes.instructions}>
-              All steps completed - your resume is ready!!
-            </Typography>
             <Button onClick={handleReset}>Reset</Button>
             <Button onClick={handleEdit}>Edit</Button>
             <Resume />
@@ -171,30 +155,28 @@ function getStepContent(step) {
               >
                 Next
               </Button>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleComplete}
-                  >
-                    {completedSteps() === totalSteps() - 1
-                      ? "Finish"
-                      : "Save and Continue"}
-                  </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleComplete}
+              >
+                {completedSteps() === totalSteps() - 1
+                  ? "Finish"
+                  : "Save and Continue"}
+              </Button>
             </div>
           </div>
         )}
       </div>
     </div>
   );
-}
+};
 const mapStateToProps = (state) => ({
-
   educationFormData: state.Education,
-  profileData : state.Profile,
+  profileData: state.Profile,
   projectFormData: state.Project,
-  SkillsFormData: state.Skills,
-  SocialFormData: state.Social
-
+  JobsFormData: state.Jobs,
+  CustomFormData: state.Custom,
 });
 
 export default connect(mapStateToProps, {})(ResumeForm);
