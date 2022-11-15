@@ -5,7 +5,6 @@ import {
   } from "../Constants/constant";
 
   const initialState = {
-    
     Data: [{sectiontitle: null, customtitle: null, customdate: null, customdescription: null,}],
     Count: 1,
   };

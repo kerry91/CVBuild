@@ -46,7 +46,7 @@ const ResumeModel = (props) => {
   return (
     <div>
       <Button color="primary" variant="contained" onClick={handlePrint}>
-        Preview CV
+        Print CV
       </Button>
       <Paper className={classes.ParentResumeModel} elevation={1}>
         <div

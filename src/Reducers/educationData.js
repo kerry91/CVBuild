@@ -3,6 +3,7 @@ import {
     CLEAR_EDUCATION,
     MODIFY_COUNT,
   } from "../Constants/constant";
+  
   const initialState = {
     Data: [
       { completionYear: null, college: null, courseName: null, title: null },

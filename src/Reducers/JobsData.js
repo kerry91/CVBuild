@@ -3,6 +3,7 @@ import {
     CLEAR_JOBS,
     MODIFY_JOBS_COUNT,
   } from "../Constants/constant";
+  
   const initialState = {
     Data: [
       {

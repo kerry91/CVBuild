@@ -1,4 +1,5 @@
 import { CLEAR_PROFILE, PROFILE } from "../Constants/constant";
+
 const initialState = {
   Data: {},
 };
