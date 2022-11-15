@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import Form from "./Forms/index.js";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
-  }
+  },
 }));
 
 const MainPage = (props) => {

@@ -73,7 +73,7 @@ const CustomForm = (props) => {
     Form.push(
       <div className={classes.instance}>
         <Grid container spacing={3}>
-          <Grid item md={12} xs={12}>
+          <Grid item md={12} xs={12} sm={12}>
             <TextField
               fullWidth
               name={`sectiontitle`}
@@ -84,7 +84,7 @@ const CustomForm = (props) => {
               }
               label="Section Title"
               onChange={handleChange(i)}
-              variant="outlined"
+              variant="standard"
               formControlProps={{
                 fullWidth: true,
               }}
@@ -102,7 +102,7 @@ const CustomForm = (props) => {
               label="Title"
               onChange={handleChange(i)}
               multiline={2}
-              variant="outlined"
+              variant="standard"
             />
           </Grid>
           <Grid item md={3} xs={12}>
@@ -116,7 +116,7 @@ const CustomForm = (props) => {
               }
               label="Date"
               onChange={handleChange(i)}
-              variant="outlined"
+              variant="standard"
             />
           </Grid>
           <Grid item md={3} xs={12}>
@@ -130,7 +130,7 @@ const CustomForm = (props) => {
               }
               label="Description"
               onChange={handleChange(i)}
-              variant="outlined"
+              variant="standard"
             />
           </Grid>
         </Grid>
@@ -142,7 +142,7 @@ const CustomForm = (props) => {
   return (
     <>
       <form autoComplete="off" noValidate>
-        <Card>
+        <Card elevation={12}>
           <CardHeader subheader="Add your Custom" />
           <form>{Form.map((instance) => instance)}</form>
           <div className={classes.footer}>

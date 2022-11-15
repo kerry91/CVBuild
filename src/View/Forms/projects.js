@@ -7,6 +7,7 @@ import {
   CardHeader,
   Divider,
   Grid,
+  Paper,
   TextField,
 } from "@material-ui/core";
 
@@ -75,7 +76,7 @@ const ProjectForm = (props) => {
               }
               label="Project Name"
               onChange={handleChange(i)}
-              variant="outlined"
+              variant="standard"
               formControlProps={{
                 fullWidth: true,
               }}
@@ -93,7 +94,7 @@ const ProjectForm = (props) => {
               label="Description"
               onChange={handleChange(i)}
               multiline={2}
-              variant="outlined"
+              variant="standard"
             />
           </Grid>
           <Grid item md={4} xs={12}>
@@ -107,7 +108,7 @@ const ProjectForm = (props) => {
               }
               label="GitHub Link (optional)"
               onChange={handleChange(i)}
-              variant="outlined"
+              variant="standard"
             />
           </Grid>
         </Grid>
@@ -119,7 +120,7 @@ const ProjectForm = (props) => {
   return (
     <>
       <form autoComplete="off" noValidate>
-        <Card>
+      <Card elevation={12}>
           <CardHeader subheader="Add your Projects" />
           <form>{Form.map((instance) => instance)}</form>
           <div className={classes.footer}>

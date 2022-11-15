@@ -71,6 +71,7 @@ const EducationForm = (props) => {
     props.ModifyEducationCount(props.educationFormData.Count + 1);
   };
 
+  
   let Form = [];
   for (let i = 0; i < props.educationFormData.Count; i++) {
     Form.push(
@@ -78,7 +79,6 @@ const EducationForm = (props) => {
         <Grid container spacing={3}>
           <Grid item md={3} xs={12}>
             <TextField
-              required
               fullWidth
               name={`completionYear`}
               defaultValue={
@@ -87,14 +87,13 @@ const EducationForm = (props) => {
                   : ""
               }
               label="Date"
-              type="number"
               onChange={handleChange(i)}
-              variant="outlined"
+              variant="standard"
+              color="primary"
             />
           </Grid>
           <Grid item md={3} xs={12}>
             <TextField
-              required
               fullWidth
               defaultValue={
                 props.educationFormData.Data && props.educationFormData.Data[i]
@@ -104,12 +103,12 @@ const EducationForm = (props) => {
               name={`college`}
               label="College/School"
               onChange={handleChange(i)}
-              variant="outlined"
+              variant="standard"
+              color="primary"
             />
           </Grid>
           <Grid item md={3} xs={12}>
             <TextField
-              required
               fullWidth
               name={`courseName`}
               defaultValue={
@@ -119,7 +118,8 @@ const EducationForm = (props) => {
               }
               label="Course Name"
               onChange={handleChange(i)}
-              variant="outlined"
+              variant="standard"
+              color="primary"
               formControlProps={{
                 fullWidth: true,
               }}
@@ -127,7 +127,6 @@ const EducationForm = (props) => {
           </Grid>
           <Grid item md={3} xs={12}>
             <TextField
-              required
               fullWidth
               defaultValue={
                 props.educationFormData.Data && props.educationFormData.Data[i]
@@ -137,7 +136,8 @@ const EducationForm = (props) => {
               name={`title`}
               label="Course Title"
               onChange={handleChange(i)}
-              variant="outlined"
+              variant="standard"
+              color="primary"
             />
           </Grid>
         </Grid>
@@ -149,7 +149,7 @@ const EducationForm = (props) => {
   return (
     <>
       <form autoComplete="off" noValidate>
-        <Card>
+      <Card elevation={12}>
           <CardHeader subheader="Add your Education Details" />
           {Form.map((instance) => instance)}
           <div className={classes.footer}>

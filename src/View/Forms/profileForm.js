@@ -34,21 +34,22 @@ const ProfileForm = (props) => {
     props.SaveProfileData(prevdata);
     localStorage.setItem('profileData', JSON.stringify(prevdata));
   };
+  
 
   return (
     <>
       <form autoComplete="off" noValidate>
-        <Card className={classes.root}>
+        <Card className={classes.root} elevation={12}>
           <CardHeader subheader="Add your profile details" />
           <Grid container spacing={3}>
-            <Grid item md={6} xs={12}>
+            <Grid item md={6} xs={12} >
               <TextField
                 fullWidth
                 name="name"
                 defaultValue={profileData.Data ? profileData.Data.name : ""}
                 label="Name"
                 onChange={handleChange}
-                variant="outlined"
+                variant="standard"
               />
             </Grid>
 
@@ -59,7 +60,7 @@ const ProfileForm = (props) => {
                 defaultValue={profileData.Data ? profileData.Data.jobtitle : ""}
                 label="Job Title"
                 onChange={handleChange}
-                variant="outlined"
+                variant="standard"
               />
             </Grid>
 
@@ -71,7 +72,7 @@ const ProfileForm = (props) => {
                 name="email"
                 label="Email"
                 onChange={handleChange}
-                variant="outlined"
+                variant="standard"
               />
             </Grid>
 
@@ -83,7 +84,7 @@ const ProfileForm = (props) => {
                 defaultValue={profileData.Data ? profileData.Data.number : null}
                 label="Number"
                 onChange={handleChange}
-                variant="outlined"
+                variant="standard"
               />
             </Grid>
             <Grid item md={6} xs={12}>
@@ -95,7 +96,7 @@ const ProfileForm = (props) => {
                 }
                 label="Website (optional)"
                 onChange={handleChange}
-                variant="outlined"
+                variant="standard"
               />
             </Grid>
             <Grid item md={6} xs={12}>
@@ -107,13 +108,13 @@ const ProfileForm = (props) => {
                 }
                 label="LinkedIn (optional)"
                 onChange={handleChange}
-                variant="outlined"
+                variant="standard"
               />
             </Grid>
             <Grid item md={12} xs={12}>
               <TextField
                 fullWidth
-                id="outlined-multiline-flexible"
+                id="standard-multiline-flexible"
                 multiline
                 rows={4}
                 name="psummary"

@@ -48,7 +48,8 @@ const ResumeModel = (props) => {
       <Button color="primary" variant="contained" onClick={handlePrint}>
         Print CV
       </Button>
-      <Paper className={classes.ParentResumeModel} elevation={1}>
+      <p></p>
+      <Paper className={classes.ParentResumeModel} elevation={24}>
         <div
           ref={componentRef}
           elevation={1}

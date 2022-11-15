@@ -67,6 +67,7 @@ const JobsForm = (props) => {
     props.SaveJobsData(list);
     props.ModifyJobsCount(props.JobsFormData.Count + 1);
   };
+  
 
   let Form = [];
   for (let i = 0; i < props.JobsFormData.Count; i++) {
@@ -84,7 +85,7 @@ const JobsForm = (props) => {
               }
               label="Date"
               onChange={handleChange(i)}
-              variant="outlined"
+              variant="standard"
               formControlProps={{
                 fullWidth: true,
               }}
@@ -102,7 +103,7 @@ const JobsForm = (props) => {
               label="Title"
               onChange={handleChange(i)}
               multiline={2}
-              variant="outlined"
+              variant="standard"
             />
           </Grid>
           <Grid item md={3} xs={12}>
@@ -116,7 +117,7 @@ const JobsForm = (props) => {
               }
               label="Description"
               onChange={handleChange(i)}
-              variant="outlined"
+              variant="standard"
             />
           </Grid>
           <Grid item md={3} xs={12}>
@@ -130,7 +131,7 @@ const JobsForm = (props) => {
               }
               label="Company Name"
               onChange={handleChange(i)}
-              variant="outlined"
+              variant="standard"
             />
           </Grid>
         </Grid>
@@ -142,7 +143,7 @@ const JobsForm = (props) => {
   return (
     <>
       <form autoComplete="off" noValidate>
-        <Card>
+      <Card elevation={12}>
           <CardHeader subheader="Add your Jobs" />
           <form>{Form.map((instance) => instance)}</form>
           <div className={classes.footer}>

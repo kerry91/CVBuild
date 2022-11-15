@@ -112,7 +112,7 @@ const ResumeForm = (props) => {
 
   return (
     <div className={classes.root}>
-      <Stepper nonLinear activeStep={activeStep}>
+      <Stepper nonLinear activeStep={activeStep} alternativeLabel>
         {steps.map((label, index) => (
           <Step key={label}>
             <StepButton
@@ -137,7 +137,7 @@ const ResumeForm = (props) => {
             <Typography className={classes.instructions}>
               {getStepContent(activeStep)}
             </Typography>
-            <div>
+            <div className="bottom-buttons">
               <Button
                 disabled={activeStep === 0}
                 variant="contained"
