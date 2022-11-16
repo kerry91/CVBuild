@@ -1,0 +1,34 @@
+:root{
+  --primary: #710b7e;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+hr{
+  border: 1px var(--primary) solid;
+}
+
+.bottom-buttons{
+  margin-top: 3%;
+}
+
+/*Mui Overrides*/
+.MuiButton-containedPrimary {
+  background-color: var(--primary) !important;
+}
+
+.MuiStepIcon-root.MuiStepIcon-active, .MuiStepIcon-root.MuiStepIcon-completed, .MuiFormLabel-root.Mui-focused{
+  color: var(--primary) !important;
+}
+
+.MuiInput-underline:after{
+  border-bottom: var(--primary) !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary) !important;
+}
+/*Mui Overrides*/
